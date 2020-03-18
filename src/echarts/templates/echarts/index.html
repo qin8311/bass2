@@ -1,0 +1,33 @@
+{% extends "base.html" %}　
+{% load static %}
+{% block title %}数据可视化{% endblock %}
+
+{% block styles %}
+<style type="text/css">
+    html{height: 100%}
+    body {height: 100%;
+    margin: 0;
+    }
+</style>
+{% endblock %}
+
+{% block pscripts %}
+<script src="{% static 'js/jquery.min.js'%}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'echarts/js/echarts.min.js'%}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'echarts/js/theme/dark.js'%}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'echarts/js/theme/infographic.js'%}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'echarts/js/theme/macarons.js'%}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'echarts/js/theme/roma.js'%}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'echarts/js/theme/shine.js'%}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'echarts/js/theme/vintage.js'%}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'echarts/js/city_map.js'%}" type="text/javascript" charset="utf-8"></script>
+{% endblock %} 
+
+{% block scripts %}
+<script src="{% static 'echarts/js/app.js'%}" type="text/javascript" charset="utf-8"></script>
+{% endblock %}                 
+    
+
+{% block main %} 
+<div id="main" style="height: 100%"></div>
+{% endblock %}

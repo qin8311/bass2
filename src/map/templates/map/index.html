@@ -1,0 +1,63 @@
+{% extends "base.html" %}　
+{% load static %}
+{% block title %}地图展示{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'map/css/leaflet.css'%}"/>
+<link href="{% static 'bootstrap/bootstrap.min.css'%}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'bootstrap-chinese-region/bootstrap-chinese-region.css'%}">
+{% endblock %}
+
+{% block pscripts %}
+<script src="{% static 'js/jquery.min.js'%}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'bootstrap/bootstrap.min.js'%}"></script>
+<script type="text/javascript" src="{% static 'bootstrap-chinese-region/bootstrap-chinese-region.js'%}"></script>
+<script src="{% static 'map/js/leaflet.js'%}"></script>
+<script type="text/javascript" src="{% static 'map/js/leaflet.js'%}"></script>
+<script type="text/javascript" src="{% static 'map/js/leaflet.ChineseTmsProviders.js'%}"></script>
+{% endblock %} 
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'map/js/app.js'%}"></script>
+{% endblock %}
+
+ {% block header %}
+<nav class="navbar navbar-inverse navbar-embossed" role="navigation" style="margin-bottom: 0; border-radius: 0; z-index:2">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="#">Map UI</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-01">
+            <ul class="nav navbar-nav navbar-left"> 
+                <li>                    
+                    <a href="JavaScript:void(0)" onclick="ClearMap()">清除覆盖物</a>
+                </li>
+                <li>
+                    <a href="JavaScript:void(0)" onclick="createControl()">查询行政区域</a>
+                </li>
+                <li>
+                    <a href="JavaScript:void(0)" onclick="createMarker()">绘制基站</a>
+                </li>
+                <li>
+                    <a href="JavaScript:void(0)" onclick="createPolygon()">绘制小区</a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="查询">
+                </div>
+            </form>
+        </div>
+</nav>    
+ {% endblock %}
+    
+
+{% block main %} 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12" id="map" style="position: absolute;top: 53px;bottom: 0;z-index:1"></div>
+        </div>
+    </div>
+{% endblock %}
